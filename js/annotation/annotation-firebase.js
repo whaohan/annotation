@@ -1,14 +1,16 @@
 // Firebase configuration
 var firebaseScript = document.createElement('script');
-firebaseScript.src = "https://www.gstatic.com/firebasejs/5.0.1/firebase.js";
+firebaseScript.src = "js/firebase.js";
 firebaseScript.onload = function() {
     var config = {
-      apiKey: "AIzaSyDW7mMPdDf9OMugsEYF-LOafz6y4fsN8Ss",
-      authDomain: "adl-music-annotation.firebaseapp.com",
-      databaseURL: "https://adl-music-annotation.firebaseio.com",
-      projectId: "adl-music-annotation",
-      storageBucket: "adl-music-annotation.appspot.com",
-      messagingSenderId: "1030467665544"
+      apiKey: "AIzaSyB3LQFXpiuTvSU6BM9LRr_4F9iri1KrFmc",
+      authDomain: "annotation-60cc5.firebaseapp.com",
+      databaseURL: "https://annotation-60cc5.firebaseio.com",
+      projectId: "annotation-60cc5",
+      storageBucket: "annotation-60cc5.appspot.com",
+      messagingSenderId: "779160233809",
+      appId: "1:779160233809:web:e4bc12c298a46ac0c1d570",
+      measurementId: "G-QJK1FRR5ZP"
     };
 
     firebase.initializeApp(config);
@@ -24,6 +26,7 @@ function downloadPieces(onLibraryDownloaded) {
         .then(function (snap) {
              onLibraryDownloaded(snap.val());
         });
+    
 }
 
 function savePieceAnnotation(pieceId, count, annotation) {
