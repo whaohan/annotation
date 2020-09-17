@@ -1,0 +1,71 @@
+{
+  "annotations" : {
+    "piece0_1" : {
+      "age" : "21-25",
+      "arousal" : [ -0.06, -0.23, -0.59, -0.18, -0.21, -0.09, -0.09, -0.7, -0.78, 0.98, 0.84, 0.8, 0.76, 0.8, 0.82, -0.18, -0.18, -0.18, -0.38, -0.44, -0.44, -0.44, -0.44, -0.5, 0.09, 0.47, 0.54, 0.55, 0.55, 0.55, 0.38, 0.47 ],
+      "country" : "US",
+      "ex1_arousal" : "1",
+      "ex1_description" : "very upbeat",
+      "ex1_valence" : "1",
+      "ex2_arousal" : "Delighted",
+      "ex2_valence" : "2",
+      "gender" : "Male",
+      "isKnown" : false,
+      "musicianship" : 1,
+      "valence" : [ -0.06, -0.14, -0.53, -0.15, -0.11, -0.36, -0.7, -0.26, -0.25, 0.02, -0.28, -0.27, -0.27, -0.2, -0.23, -0.82, -0.82, -0.82, -0.69, -0.62, -0.62, -0.62, -0.62, -0.55, -0.82, -0.69, -0.65, -0.65, -0.66, -0.65, -0.68, -0.35 ]
+    },
+    "piece10_10" : {
+      "age" : "31-35",
+      "arousal" : [ 0.27, 0.27, 0.09, -0.23, -0.26, -0.27, -0.27, -0.27, -0.27, -0.27, -0.27, -0.27, -0.45, -0.45, -0.33, -0.28, -0.28, -0.28, -0.28, -0.28, -0.28, -0.28, -0.28, -0.28, -0.28 ],
+      "country" : "US",
+      "ex1_arousal" : "1",
+      "ex1_description" : "It seems like a song you would put in a action movie. The tempo speeds up and I almost feel anxious.",
+      "ex1_valence" : "1",
+      "ex2_arousal" : "Slower tempo, I feel more frustrated when I listen to this peace. It's more of a sad song. Not as upbeat.",
+      "ex2_valence" : "2",
+      "gender" : "Female",
+      "isKnown" : false,
+      "musicianship" : 3,
+      "valence" : [ 0.43, 0.43, 0.5, 0.65, 0.62, 0.53, 0.53, 0.53, 0.53, 0.53, 0.53, 0.53, 0.54, 0.54, 0.54, 0.55, 0.55, 0.55, 0.55, 0.55, 0.55, 0.55, 0.55, 0.55, 0.55 ]
+    }
+  },
+  "pieces" : {
+    "piece0" : {
+      "audio" : "audio/Lurking In The Darkness.wav",
+      "duration" : 63,
+      "measures" : 32,
+      "midi" : "Final_Fantasy_7_LurkingInTheDarkness.mid",
+      "name" : "Lurking In The Darkness"
+    },
+    "piece1" : {
+      "audio" : "audio/The Mayors Office.wav",
+      "duration" : 80,
+      "measures" : 40,
+      "midi" : "Legend_Of_Zelda_The_Majoras_Mask_TheMayorsOffice.mid",
+      "name" : "The Mayor's Office"
+    },
+    "piece10" : {
+      "audio" : "audio/Continue.wav",
+      "duration" : 74,
+      "measures" : 25,
+      "midi" : "Final_Fantasy_7_Continue.mid",
+      "name" : "Continue?"
+    },
+    "piece11" : {
+      "audio" : "audio/Oppressed People.wav",
+      "duration" : 70,
+      "measures" : 40,
+      "midi" : "Final_Fantasy_7_OppressedPeople.mid",
+      "name" : "Oppressed People"
+    },
+    "piece12" : {
+      "audio" : "audio/Deku Palace.wav",
+      "duration" : 131,
+      "measures" : 60,
+      "midi" : "Legend_Of_Zelda_The_Majoras_Mask_DekuPalace.mid",
+      "name" : "Deku Palace"
+    }
+  }
+}
+
+
