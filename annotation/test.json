@@ -31,14 +31,14 @@
   },
   "pieces" : {
     "piece0" : {
-      "audio" : "audio/Lurking In The Darkness.wav",
+      "audio" : "audio/Lurking_In_The_Darkness.wav",
       "duration" : 63,
       "measures" : 32,
       "midi" : "Final_Fantasy_7_LurkingInTheDarkness.mid",
       "name" : "Lurking In The Darkness"
     },
     "piece1" : {
-      "audio" : "audio/The Mayors Office.wav",
+      "audio" : "audio/The_Mayors_Office.wav",
       "duration" : 80,
       "measures" : 40,
       "midi" : "Legend_Of_Zelda_The_Majoras_Mask_TheMayorsOffice.mid",
@@ -52,14 +52,14 @@
       "name" : "Continue?"
     },
     "piece11" : {
-      "audio" : "audio/Oppressed People.wav",
+      "audio" : "audio/Oppressed_People.wav",
       "duration" : 70,
       "measures" : 40,
       "midi" : "Final_Fantasy_7_OppressedPeople.mid",
       "name" : "Oppressed People"
     },
     "piece12" : {
-      "audio" : "audio/Deku Palace.wav",
+      "audio" : "audio/Deku_Palace.wav",
       "duration" : 131,
       "measures" : 60,
       "midi" : "Legend_Of_Zelda_The_Majoras_Mask_DekuPalace.mid",
