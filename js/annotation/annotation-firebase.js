@@ -15,7 +15,7 @@ function savePieceAnnotation(pieceId, count, annotation) {
     var annotationId = pieceId + "_" + (count + 1).toString();
     // send the data to server
 	let xhr = new XMLHttpRequest();
-	xhr.open('POST', 'php/save.php', true);
+	xhr.open('POST', 'php/save.php', false);
 	let form = new FormData();
     form.set('annotationId', annotationId);
     form.set('valence', annotation.valence);
@@ -23,12 +23,7 @@ function savePieceAnnotation(pieceId, count, annotation) {
 
     console.log(annotationId)
     console.log(annotation)
-    
-	xhr.onreadystatechange = function () {
-		if (xhr.readyState != 4) {
-			return;
-		}
-		alert(xhr.responseText);
-	};
+
 	xhr.send(form);
+	alert(xhr.responseText);
 }
