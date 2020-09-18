@@ -21,6 +21,9 @@ function savePieceAnnotation(pieceId, count, annotation) {
     form.set('valence', annotation.valence);
     form.set('arousal', annotation.arousal);
 
+    console.log(annotationId)
+    console.log(annotation)
+    
 	xhr.onreadystatechange = function () {
 		if (xhr.readyState != 4) {
 			return;
