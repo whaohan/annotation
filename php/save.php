@@ -19,7 +19,13 @@
 
 		$sql = "INSERT INTO test (annotationId, annotation)
 		VALUES (" . $annotationId . ", " . $str . ")";
-
+		
+		if ($conn->query($sql) === TRUE) {
+			echo "data has been successfully uploaded";
+		} else {
+			echo "Error: " . $sql . "<br>" . $conn->error;
+		}
+		
 		$conn->close();
 	}
 	catch (Exception $err)
