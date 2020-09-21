@@ -2,35 +2,25 @@
 	$annotationId = htmlspecialchars($_POST["annotationId"], ENT_QUOTES);
 	$valence = htmlspecialchars($_POST["valence"], ENT_QUOTES);
 	$arousal = htmlspecialchars($_POST["arousal"], ENT_QUOTES);
-	require "sql.php";
+	$servername = "localhost";
+	$username = "root";
+	$password = "homework1.0";
+	$dbname = "annotation";
 	try {
-		// insertIntoMysql($target, $entry);
-		// switch ($mode) {
-		// 	case "insert":
-		// 		if (selectInMysql($target, $entry))
-		// 		{
-		// 			throw new Exception("Entry exists: " . json_encode($entry) . " in " . $target);
-		// 		}
-		// 		insertIntoMysql($target, $entry);
-		// 		break;
-		// 	case "delete":
-		// 		if (!selectInMysql($target, $entry))
-		// 		{
-		// 			throw new Exception("Entry doesn't exist: " . json_encode($entry) . " in " . $target);
-		// 		}
-		// 		deleteFromMysql($target, $entry);
-		// 		break;
-		// 	default:
-		// 		throw new Exception("Unable to understand mode: " . $mode);
-        // }
-
-        // 追加写入用户名下文件
-        $json_string = file_get_contents("annotation/test.json");// 从文件中读取数据到PHP变量
-        $data = json_decode($json_string,true);// 把JSON字符串转成PHP数组
-        $data["annotations"][$annotationId] = array("arousal"=>$arousal,"valence"=>$valence);
-        $json_strings = json_encode($data);
-        file_put_contents("annotation/test.json",$json_strings);//写入
+		// 创建连接
+		$conn = new mysqli($servername, $username, $password, $dbname);
+		// 检测连接
+		if ($conn->connect_error) {
+			die("连接失败: " . $conn->connect_error);
+		} 
 		
+		$arr = array("annotationId"=>$annotationId, "annotation"=>array("valence"=>$valence, "arousal"=>$arousal));
+		$str = json_encode($arr);
+
+		$sql = "INSERT INTO test (annotationId, annotation)
+		VALUES (" . $annotationId . ", " . $str . ")";
+
+		$conn->close();
 	}
 	catch (Exception $err)
 	{
