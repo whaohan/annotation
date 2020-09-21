@@ -30,7 +30,7 @@
         $data["annotations"][$annotationId] = array("arousal"=>$arousal,"valence"=>$valence);
         $json_strings = json_encode($data);
         file_put_contents("annotation/test.json",$json_strings);//写入
-
+		
 	}
 	catch (Exception $err)
 	{

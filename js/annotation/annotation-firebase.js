@@ -1,5 +1,5 @@
 function downloadPieces(onLibraryDownloaded) {
-    var url = "annotation/test.json";
+    var url = "php/get.php";
     var request = new XMLHttpRequest();
     request.open("get", url);
     request.send(null);
