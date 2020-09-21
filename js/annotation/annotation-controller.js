@@ -76,7 +76,7 @@ function getPiecesToAnnotate(data) {
     var piecesData = data.pieces;
     var annotationData = data.annotations;
 
-    for (let i in annotationData)
+    for (let i of annotationData)
         i = JSON.parse(i);
     // for(let iter in annotationData) {
     //     annotationData[iter] = JSON.parse(annotationData[iter]);
