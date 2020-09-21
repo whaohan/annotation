@@ -32,7 +32,7 @@ while($row = $result->fetch_assoc()) {
     unset($row[$i]);
   } 
   // push it into array
-  $pieces[$row["annotationId"]] = stripslashes($row["annotation"]);
+  $annotation[$row["annotationId"]] = stripslashes($row["annotation"]);
 } 
 // transform it into json
 echo json_encode(array("annotation"=>$annotation,"pieces"=>$pieces),JSON_UNESCAPED_UNICODE);
