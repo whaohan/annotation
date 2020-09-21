@@ -76,6 +76,12 @@ function getPiecesToAnnotate(data) {
     var piecesData = data.pieces;
     var annotationData = data.annotations;
 
+    for (let i in annotationData)
+        i = JSON.parse(i);
+    // for(let iter in annotationData) {
+    //     annotationData[iter] = JSON.parse(annotationData[iter]);
+    // }
+
     console.log(data);
 
     if(piecesData != null) {
