@@ -20,7 +20,7 @@ while($row = $result->fetch_assoc()) {
       unset($row[$i]);
     } 
     // push it into array
-    array_push($pieces,$row); 
+    $pieces[$row["pieceId"]] = $pieces;
 } 
 // get the annotation
 $result = $conn->query("SELECT * FROM test"); 
@@ -32,9 +32,9 @@ while($row = $result->fetch_assoc()) {
     unset($row[$i]);
   } 
   // push it into array
-  array_push($annotation,$row); 
+  $pieces[$row["annotationId"]] = stripslashes($row["annotation"]);
 } 
 // transform it into json
-echo json_encode(array("annotation"=>$annotation,"pieces"=>$pieces),JSON_UNESCAPED_UNICODE);//json编码 
+echo json_encode(array("annotation"=>$annotation,"pieces"=>$pieces),JSON_UNESCAPED_UNICODE);
 $conn->close(); 
 ?> 
