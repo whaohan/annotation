@@ -18,7 +18,7 @@
 		$str = json_encode($arr);
 
 		$sql = "INSERT INTO test (annotationId, annotation)
-		VALUES (" . $annotationId . ", " . $str . ")";
+		VALUES ('" . $annotationId . "', '" . $str . "')";
 		
 		if ($conn->query($sql) === TRUE) {
 			echo "data has been successfully uploaded";
