@@ -36,6 +36,6 @@ while($row = $result->fetch_assoc()) {
   $annotation[$row["annotationId"]] = json_decode(stripslashes($row["annotation"]));
 } 
 // transform it into json
-echo json_encode(array("annotation"=>$annotation,"pieces"=>$pieces),JSON_UNESCAPED_UNICODE);
+echo json_encode(array("annotations"=>$annotation,"pieces"=>$pieces),JSON_UNESCAPED_UNICODE);
 $conn->close(); 
 ?> 
