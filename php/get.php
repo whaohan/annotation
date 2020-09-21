@@ -20,7 +20,7 @@ while($row = $result->fetch_assoc()) {
       unset($row[$i]);
     } 
     // push it into array
-    $pieces[$row["pieceId"]] = $pieces;
+    $pieces[$row["pieceId"]] = $row;
 } 
 // get the annotation
 $result = $conn->query("SELECT * FROM test"); 
