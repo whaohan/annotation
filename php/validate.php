@@ -23,5 +23,5 @@ while($row = $result->fetch_assoc()) {
 }
 $conn->close();
 
-echo $login;
+echo array($login, $account, $password);
 ?> 

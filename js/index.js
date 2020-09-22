@@ -4,7 +4,10 @@ function SubmitForm(e)
 	// Reset the styles
 	document.querySelectorAll('input[type="text"]').forEach(input => input.className = '');
 	// Collect form data
-	let form = new FormData(document.querySelector('form'));
+    let form = new FormData(document.querySelector('form'));
+
+    console.log(form);
+    
 	// Submit the form via AJAX
 	let xhr = new XMLHttpRequest();
 	xhr.open('POST', 'php/validate.php', true);
