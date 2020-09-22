@@ -1,6 +1,6 @@
 <html>
     <head>
-        <title>ADL Music Annotation Tool</title>
+        <title>Music Annotation Tool</title>
 
         <!-- Required meta tags -->
         <meta charset="utf-8">
@@ -15,22 +15,31 @@
         </div>
 
         <div class="container pt-2">
-            <p> This is a tool to annotate emotions perceived in music pieces.
-            It was developed by <a href="http://www.lucasnferreira.com">Lucas N. Ferreira</a> as part of his
-            Ph.D. in Computer Science at the <a href="https://games.soe.ucsc.edu/adl">Augmented Design Lab</a> -
-            <a href="https://www.soe.ucsc.edu/departments/computational-media">Department of Computational Media</a> -
-            <a href="https://www.ucsc.edu">University of California, Santa Cruz</a>. </p>
-
             <p>The annotation task takes in average 10 MINUTES and consists of listenning to a list of
                music pieces and annotating them using an emotion map.</p>
 
-            <p>If you agree on performing this task, please click on the Next button.</p>
+            <p>Please login to continue.</p>
 
-            <div class="container pt-4 pb-4 page-controler text-center">
+            <!-- <div class="container pt-4 pb-4 page-controler text-center">
                 <button type="button" class="btn btn-outline-dark" id="next-button" href="#" onClick="nextPage('emotion.html')">Next</button>
-            </div>
+            </div> -->
+            <form action="php/validate.php" method="post" enctype="multipart/form-data" style="text-align: center;">
+				<section>
+					<label for="account">Account:</label>
+					<input type="text" name="account" id="account" required />
+				</section>
+				<section>
+					<label for="password">Password:</label>
+					<input type="password" name="password" id="password" required />
+                </section>
+                <section style="text-align: center;">
+					<input type="submit" name="submit" id="submit" value="login" />
+					</div>
+				</section>
+			</form>
         </div>
 
         <script src="js/lib/page-manager.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
     </body>
 </html>
