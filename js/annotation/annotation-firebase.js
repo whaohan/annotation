@@ -30,6 +30,7 @@ function savePieceAnnotation(pieceId, count, annotation) {
     console.log(account)
     console.log(complete)
 
-	xhr.send(form);
-	alert(xhr.responseText);
+    xhr.send(form);
+    if(xhr.responseText != '')
+	    alert(xhr.responseText);
 }
