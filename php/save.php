@@ -2,6 +2,8 @@
 	$annotationId = htmlspecialchars($_POST["annotationId"], ENT_QUOTES);
 	$valence = htmlspecialchars($_POST["valence"], ENT_QUOTES);
 	$arousal = htmlspecialchars($_POST["arousal"], ENT_QUOTES);
+	$complete = htmlspecialchars($_POST["complete"], ENT_QUOTES);
+	$account = htmlspecialchars($_POST["account"], ENT_QUOTES);
 	$servername = "localhost";
 	$username = "root";
 	$password = "homework1.0";
@@ -21,7 +23,10 @@
 		VALUES ('" . $annotationId . "', '" . $str . "')";
 		
 		if ($conn->query($sql) === TRUE) {
-			echo "data has been successfully uploaded";
+			// add the complete number to the database
+			$sql2 = "UPDATE user SET complete = ". $complete + 2 ."WHERE account = '" . $account . "'";
+			$conn->query($sql2);
+			echo "data has been uploaded successfully";
 		} else {
 			echo "Error: " . $sql . "<br>" . $conn->error;
 		}
