@@ -37,8 +37,8 @@ function SubmitForm(e)
 		if(result == -1) {
 			alert("The account is not found! Please check your account and password and try again.");
 		} else {
-			account = document.querySelector("input#account");
-			password = document.querySelector("input#password");
+			account = document.querySelector("input#account").value;
+			password = document.querySelector("input#password").value;
 			sessionStorage.setItem("account", account);
 			sessionStorage.setItem("password", password);
 			sessionStorage.setItem("complete", result);
