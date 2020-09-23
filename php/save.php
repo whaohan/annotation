@@ -25,7 +25,11 @@
 		if ($conn->query($sql) === TRUE) {
 			// add the complete number to the database
 			$sql2 = "UPDATE user SET complete = ". $complete + 2 ."WHERE account = '" . $account . "'";
-			$conn->query($sql2);
+			if($conn->query($sql2) == FALSE) {
+				echo "Error: " . $sql2 . "<br>" . $conn->error;
+			} else {
+				echo "complete has beed added into database"
+			}
 			echo "data has been uploaded successfully";
 		} else {
 			echo "Error: " . $sql . "<br>" . $conn->error;
