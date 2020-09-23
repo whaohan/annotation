@@ -25,7 +25,7 @@
 		if ($conn->query($sql) === TRUE) {
 			// add the complete number to the database
 			$complete = (int)$complete + 2;
-			$sql2 = "UPDATE user SET complete = ". (int)$complete ."WHERE account = '" . $account . "'";
+			$sql2 = "UPDATE user SET complete = ". (int)$complete ." WHERE account = '" . $account . "'";
 			if($conn->query($sql2) == FALSE) {
 				echo "Error: " . $sql2 . "<br>" . $conn->error;
 			} else {
