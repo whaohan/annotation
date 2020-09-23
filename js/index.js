@@ -33,7 +33,17 @@ function SubmitForm(e)
 			document.querySelector('select').className = 'error';
 		}
 		// Show the result
-		alert(xhr.responseText);
+		var result = xhr.responseText;
+		if(result == -1) {
+			alert("The account is not found! Please check your account and password and try again.");
+		} else {
+			account = document.querySelector("input#account");
+			password = document.querySelector("input#password");
+			sessionStorage.setItem("account", account);
+			sessionStorage.setItem("password", password);
+			sessionStorage.setItem("complete", result);
+			nextPage("main.html");
+		}
 		// Reset the form
 		document.querySelector('form').reset();
 	};

@@ -1,0 +1,37 @@
+<html>
+    <head>
+        <title>Music Annotation Tool</title>
+
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    </head>
+
+    <body class="container text-justify">
+        <div class="container pt-4">
+            <h2 class="text-center">Music Emotion Annotation Task</h2>
+        </div>
+
+        <div class="container pt-2">
+            <p>The annotation task takes in average 10 MINUTES and consists of listenning to a list of
+               music pieces and annotating them using an emotion map.</p>
+
+            <p>Welcome! <span id="account"></span></p>
+
+            <p>Your annotation progress is <span id="complete"> </span> / 400.</p>
+
+            <p></p>
+        </div>
+
+        <script src="js/lib/page-manager.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+        <script>
+            var account = sessionStorage.getItem("account");
+            var complete = sessionStorage.getItem("complete");
+            document.getElementById('account').innerText = account;
+            document.getElementById("complete").innerText= complete;
+        </script>
+    </body>
+</html>
