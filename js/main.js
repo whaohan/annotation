@@ -1,5 +1,3 @@
-// reload the page
-location.reload();
 // get the stored data
 var account = sessionStorage.getItem("account");
 var password = sessionStorage.getItem("password");
