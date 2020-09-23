@@ -27,6 +27,8 @@ function savePieceAnnotation(pieceId, count, annotation) {
 
     console.log(annotationId)
     console.log(annotation)
+    console.log(account)
+    console.log(complete)
 
 	xhr.send(form);
 	alert(xhr.responseText);
