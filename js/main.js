@@ -17,6 +17,7 @@ xhr.onreadystatechange = function() {
             alert("The account is not found! Please check your account and password and try again.");
             nextPage("index.html");
         } else {
+            complete = result;
             sessionStorage.setItem("complete", result);
             document.getElementById('account').innerText = account;
             document.getElementById("complete").innerText= complete;
