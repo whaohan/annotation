@@ -50,7 +50,7 @@ function updatePiecesCount(data) {
             savePieceAnnotation(pieces[i], count, annotation);
         }
 
-        nextPage("main.html");
+        nextPage("main.html?rand=" + Math.random());
     }
 }
 
