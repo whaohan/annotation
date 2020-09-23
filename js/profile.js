@@ -108,7 +108,7 @@ function updatePiecesCount(data) {
             savePieceAnnotation(pieces[i], count, annotation);
         }
 
-        nextPage("final.html")
+        nextPage("main.html");
     }
 }
 
