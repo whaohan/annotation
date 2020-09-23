@@ -26,13 +26,12 @@
 			// add the complete number to the database
 			$complete = (int)$complete + 2;
 			$sql2 = "UPDATE user SET complete = ". (int)$complete ."WHERE account = '" . $account . "'";
-			echo $sql2 . "<br>";
 			if($conn->query($sql2) == FALSE) {
 				echo "Error: " . $sql2 . "<br>" . $conn->error;
 			} else {
-				echo "complete has beed added into database";
+				// echo "complete has beed added into database";
 			}
-			echo "data has been uploaded successfully";
+			// echo "data has been uploaded successfully";
 		} else {
 			echo "Error: " . $sql . "<br>" . $conn->error;
 		}
@@ -45,5 +44,4 @@
 		die($err->getMessage());
 	}
 	header("HTTP/1.1 200 OK");
-	// die("Modify Successful! ");
 ?>

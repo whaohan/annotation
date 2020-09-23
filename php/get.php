@@ -32,7 +32,6 @@ while($row = $result->fetch_assoc()) {
     unset($row[$i]);
   } 
   // push it into array
-  // TODO: solve the problems of the stripslashes json_decode ?
   $annotation[$row["annotationId"]] = json_decode(stripslashes($row["annotation"]));
 } 
 // transform it into json
