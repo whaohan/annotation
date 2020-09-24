@@ -21,14 +21,11 @@ function updatePiecesLabels(piecesStr) {
         document.getElementById("knownPiecesCheckboxes").appendChild(checkbox);
     }
 }
-
+// save the pieces we annotate
 function updatePiecesCount(data) {
     var piecesData = data.pieces;
-    var annotationData = data.annotations;
 
     if(piecesData != null) {
-        var piecesAnnCount = getPiecesAnnotationCount(piecesData, annotationData);
-
         var annotation = {};
 
         var piecesStr = sessionStorage.getItem("pieces");
@@ -41,16 +38,14 @@ function updatePiecesCount(data) {
         var arousal = arousalStr.split("@");
 
         for (var i = 0; i < pieces.length - 1; i++) {
-            var count = piecesAnnCount[pieces[i]];
-
             annotation.isKnown = $('#knownPieceCheck' + i).is(':checked');
             annotation.valence = JSON.parse("[" + valence[i].substring(0, valence[i].length - 2) + "]");
             annotation.arousal = JSON.parse("[" + arousal[i].substring(0, arousal[i].length - 2) + "]");
 
-            savePieceAnnotation(pieces[i], count, annotation);
+            savePieceAnnotation(pieces[i], annotation);
         }
 
-        nextPage("main.html?rand=" + Math.random());
+        nextPage("main.html");
     }
 }
 

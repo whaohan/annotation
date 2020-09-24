@@ -11,8 +11,10 @@ function downloadPieces(onLibraryDownloaded) {
     }
 }
 
-function savePieceAnnotation(pieceId, count, annotation) {
-    var annotationId = pieceId + "_" + (count + 1).toString();
+// change the count to the user id
+function savePieceAnnotation(pieceId, annotation) {
+    var account = sessionStorage.getItem('account');
+    var annotationId = pieceId + "_" + account;
     var account = sessionStorage.getItem('account')
     var complete = sessionStorage.getItem('complete');
     // send the data to server

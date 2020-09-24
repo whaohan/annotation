@@ -13,80 +13,78 @@ function initController() {
     annotationState = 0;
 }
 
-function getPiecesAnnotationCount(piecesData, annotationData) {
-    var piecesAnnCount = {};
-    for (var key in piecesData) {
-        if (piecesData.hasOwnProperty(key)) {
-            piecesAnnCount[key] = 0;
-        }
-    }
+// function getPiecesAnnotationCount(piecesData, annotationData) {
+//     var piecesAnnCount = {};
+//     for (var key in piecesData) {
+//         if (piecesData.hasOwnProperty(key)) {
+//             piecesAnnCount[key] = 0;
+//         }
+//     }
 
-    if(annotationData != null) {
-        for (var key in annotationData) {
-            if (annotationData.hasOwnProperty(key)) {
-                var pieceInfo = key.split("_")
-                var pieceId = pieceInfo[0]
-                var pieceAnnCount = parseInt(pieceInfo[1])
+//     if(annotationData != null) {
+//         for (var key in annotationData) {
+//             if (annotationData.hasOwnProperty(key)) {
+//                 var pieceInfo = key.split("_")
+//                 var pieceId = pieceInfo[0]
+//                 var pieceAnnCount = parseInt(pieceInfo[1])
 
-                if(piecesAnnCount.hasOwnProperty(pieceId))
-                    piecesAnnCount[pieceId] += 1
-             }
-         }
-    }
-    return piecesAnnCount;
-}
+//                 if(piecesAnnCount.hasOwnProperty(pieceId))
+//                     piecesAnnCount[pieceId] += 1
+//              }
+//          }
+//     }
+//     return piecesAnnCount;
+// }
 
-function getMinAnnotatedPieces(piecesAnnCount, piecesData, amount) {
-    var minAnnotatedPieces = [];
+// function getMinAnnotatedPieces(piecesAnnCount, piecesData, amount) {
+//     var minAnnotatedPieces = [];
 
-    for (var i = 0; i < amount; i++) {
-        var minCount = 9999999;
-        var minPiece = "";
+//     for (var i = 0; i < amount; i++) {
+//         var minCount = 9999999;
+//         var minPiece = "";
 
-        // Get minimum count
-        for (var key in piecesAnnCount) {
-            if (piecesAnnCount.hasOwnProperty(key)) {
-                if(piecesAnnCount[key] < minCount) {
-                    minCount = piecesAnnCount[key];
-                    minPiece = key;
-                }
-            }
-        }
+//         // Get minimum count
+//         for (var key in piecesAnnCount) {
+//             if (piecesAnnCount.hasOwnProperty(key)) {
+//                 if(piecesAnnCount[key] < minCount) {
+//                     minCount = piecesAnnCount[key];
+//                     minPiece = key;
+//                 }
+//             }
+//         }
 
-        // Check if piece is included
-        var isPieceIncluded = false;
-        for (var j = 0; j < minAnnotatedPieces.length; j++) {
-            if (minAnnotatedPieces[j].id == minPiece) {
-                isPieceIncluded = true;
-            }
-        }
+//         // Check if piece is included
+//         var isPieceIncluded = false;
+//         for (var j = 0; j < minAnnotatedPieces.length; j++) {
+//             if (minAnnotatedPieces[j].id == minPiece) {
+//                 isPieceIncluded = true;
+//             }
+//         }
 
-        if(!isPieceIncluded) {
-            piecesData[minPiece].id = minPiece;
-            piecesData[minPiece].count = minCount;
-            minAnnotatedPieces.push(piecesData[minPiece]);
-            delete piecesAnnCount[minPiece];
-        }
-    }
+//         if(!isPieceIncluded) {
+//             piecesData[minPiece].id = minPiece;
+//             piecesData[minPiece].count = minCount;
+//             minAnnotatedPieces.push(piecesData[minPiece]);
+//             delete piecesAnnCount[minPiece];
+//         }
+//     }
 
-    return minAnnotatedPieces;
-}
+//     return minAnnotatedPieces;
+// }
 
 function getPiecesToAnnotate(data) {
     var piecesData = data.pieces;
-    var annotationData = data.annotations;
-
-    // for(let iter in annotationData) {
-    //     annotationData[iter] = JSON.parse(annotationData[iter]);
-    //     console.log()
-    // }
+    var complete = sessionStorage.getItem("complete");
+    // var annotationData = data.annotations;
 
     console.log(data);
 
     if(piecesData != null) {
-        var piecesAnnCount = getPiecesAnnotationCount(piecesData, annotationData);
-        piecesToAnnotate = getMinAnnotatedPieces(piecesAnnCount, piecesData, numberPiecesToAnnotate);
-
+        // var piecesAnnCount = getPiecesAnnotationCount(piecesData, annotationData);
+        // piecesToAnnotate = getMinAnnotatedPieces(piecesAnnCount, piecesData, numberPiecesToAnnotate);
+        for(var i = 0 ;i < numberPiecesToAnnotate; ++i) {
+            piecesToAnnotate.push(piecesData[complete + i + 1]);
+        }
         initAnnotationPoint();
     }
 }
