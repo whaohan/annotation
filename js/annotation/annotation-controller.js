@@ -84,7 +84,9 @@ function getPiecesToAnnotate(data) {
         // piecesToAnnotate = getMinAnnotatedPieces(piecesAnnCount, piecesData, numberPiecesToAnnotate);
         for(var i = 0 ;i < numberPiecesToAnnotate; ++i) {
             var cnt = parseInt(complete)  + i;
-            piecesToAnnotate.push(piecesData["piece" + cnt]);
+            var pieceId = "piece" + cnt;
+            piecesData[pieceId].id = pieceId;
+            piecesToAnnotate.push(piecesData[pieceId]);
         }
         initAnnotationPoint();
     }
@@ -184,11 +186,11 @@ function finishAnnotation() {
     }
     sessionStorage.setItem("names", namesStr);
 
-    var countStr = "";
-    for (var i = 0; i < piecesToAnnotate.length; i++) {
-        countStr += piecesToAnnotate[i].count + "@";
-    }
-    sessionStorage.setItem("count", countStr);
+    // var countStr = "";
+    // for (var i = 0; i < piecesToAnnotate.length; i++) {
+    //     countStr += piecesToAnnotate[i].count + "@";
+    // }
+    // sessionStorage.setItem("count", countStr);
 
     nextPage("profile.html")
 }
