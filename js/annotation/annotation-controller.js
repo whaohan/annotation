@@ -83,7 +83,8 @@ function getPiecesToAnnotate(data) {
         // var piecesAnnCount = getPiecesAnnotationCount(piecesData, annotationData);
         // piecesToAnnotate = getMinAnnotatedPieces(piecesAnnCount, piecesData, numberPiecesToAnnotate);
         for(var i = 0 ;i < numberPiecesToAnnotate; ++i) {
-            piecesToAnnotate.push(piecesData[complete + i + 1]);
+            var cnt = complete + i;
+            piecesToAnnotate.push(piecesData["piece" + cnt]);
         }
         initAnnotationPoint();
     }
