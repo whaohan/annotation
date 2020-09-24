@@ -22,19 +22,26 @@
 		$sql = "INSERT INTO test (annotationId, annotation)
 		VALUES ('" . $annotationId . "', '" . $str . "')";
 		
-		if ($conn->query($sql) === TRUE) {
-			// add the complete number to the database
-			$complete = (int)$complete + 2;
-			$sql2 = "UPDATE user SET complete = ". (int)$complete ." WHERE account = '" . $account . "'";
-			if($conn->query($sql2) == FALSE) {
-				echo "Error: " . $sql2 . "<br>" . $conn->error;
+		$sql_exist = "select ifnull((select annotationId from test where annotationId = '" . $annotationId . "' limit 1 ), 0)";
+		if($conn->query($sql_exist)) {
+			if ($conn->query($sql) === TRUE) {
+				// add the complete number to the database
+				$complete = (int)$complete + 2;
+				$sql2 = "UPDATE user SET complete = ". (int)$complete ." WHERE account = '" . $account . "'";
+				if($conn->query($sql2) == FALSE) {
+					echo "Error: " . $sql2 . "<br>" . $conn->error;
+				} else {
+					// echo "complete has beed added into database";
+				}
+				// echo "data has been uploaded successfully";
 			} else {
-				// echo "complete has beed added into database";
+				echo "Error: " . $sql . "<br>" . $conn->error;
 			}
-			// echo "data has been uploaded successfully";
 		} else {
-			echo "Error: " . $sql . "<br>" . $conn->error;
+			echo "Please do not resubmit the annotation!";
 		}
+
+		
 		
 		$conn->close();
 	}
