@@ -23,18 +23,19 @@ while($row = $result->fetch_assoc()) {
     $pieces[$row["pieceId"]] = $row;
 } 
 // get the annotation
-$result = $conn->query("SELECT * FROM test"); 
-$annotation = array(); 
-while($row = $result->fetch_assoc()) { 
-  // free the $row
-  $count=count($row);
-  for($i=0;$i<$count;$i++){ 
-    unset($row[$i]);
-  } 
-  // push it into array
-  $annotation[$row["annotationId"]] = json_decode(stripslashes($row["annotation"]));
-} 
+// $result = $conn->query("SELECT * FROM test"); 
+// $annotation = array(); 
+// while($row = $result->fetch_assoc()) { 
+//   // free the $row
+//   $count=count($row);
+//   for($i=0;$i<$count;$i++){ 
+//     unset($row[$i]);
+//   } 
+//   // push it into array
+//   $annotation[$row["annotationId"]] = json_decode(stripslashes($row["annotation"]));
+// } 
 // transform it into json
-echo json_encode(array("annotations"=>$annotation,"pieces"=>$pieces),JSON_UNESCAPED_UNICODE);
+// echo json_encode(array("annotations"=>$annotation,"pieces"=>$pieces),JSON_UNESCAPED_UNICODE);
+echo json_encode(array("pieces"=>$pieces),JSON_UNESCAPED_UNICODE);
 $conn->close(); 
 ?> 
