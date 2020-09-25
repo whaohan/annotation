@@ -1,6 +1,6 @@
 <html>
     <head>
-        <title>Music Annotation Tool</title>
+        <title>音乐情感标注工具</title>
 
         <!-- Required meta tags -->
         <meta charset="utf-8">
@@ -14,21 +14,20 @@
 
     <body class="container text-justify">
         <div class="container pt-4">
-            <h2 class="text-center">Music Emotion Annotation Task</h2>
+            <h2 class="text-center">音乐情感标注任务</h2>
         </div>
 
         <div class="container pt-2">
-            <p>The annotation task takes in average 10 MINUTES and consists of listenning to a list of
-               music pieces and annotating them using an emotion map.</p>
+            <p>标注任务利用情感图对每个音乐作品标注情感。每个作品需要花费3-5分钟进行标注。</p>
 
-            <p>Welcome! <span id="account"></span></p>
+            <p>欢迎回来! <span id="account"></span></p>
 
-            <p>Your annotation progress is <span id="complete"> </span> / 400.</p>
+            <p>你的标注进度为 <span id="complete"> </span> / 400.</p>
         </div>
 
         <div class="container pt-4 pb-4 page-controler" style="text-align: center;">
-            <button type="button" class="btn btn-outline-dark" id="back-button" href="#" onClick="nextPage('index.html')">Logout</button>
-            <button type="button" class="btn btn-outline-dark" id="next-button" href="#" onClick="nextPage('annotation.html')">Start Annotation</button>
+            <button type="button" class="btn btn-outline-dark" id="back-button" href="#" onClick="nextPage('index.html')">注销</button>
+            <button type="button" class="btn btn-outline-dark" id="next-button" href="#" onClick="nextPage('annotation.html')">开始标注</button>
         </div>
 
         <script src="js/lib/page-manager.js"></script>
