@@ -1,6 +1,6 @@
 <html>
     <head>
-        <title>Music Annotation Tool</title>
+        <title>音乐情感标注工具</title>
 
         <!-- Required meta tags -->
         <meta charset="utf-8">
@@ -11,25 +11,24 @@
 
     <body class="container text-justify">
         <div class="container pt-4">
-            <h2 class="text-center">Music Emotion Annotation Task</h2>
+            <h2 class="text-center">音乐情感标注任务</h2>
         </div>
 
         <div class="container pt-2">
-            <p>The annotation task takes in average 10 MINUTES and consists of listenning to a list of
-               music pieces and annotating them using an emotion map.</p>
+            <p>标注任务利用情感图对每个音乐作品标注情感。每个作品需要花费3-5分钟进行标注。</p>
 
-            <p>Please login to continue.</p>
+            <p>请登录以便进行标注</p>
 
             <!-- <div class="container pt-4 pb-4 page-controler text-center">
                 <button type="button" class="btn btn-outline-dark" id="next-button" href="#" onClick="nextPage('emotion.html')">Next</button>
             </div> -->
             <form action="php/validate.php" method="post" enctype="multipart/form-data" style="text-align: center;">
 				<section>
-					<label for="account">Account:</label>
+					<label for="account">账号:</label>
 					<input type="text" name="account" id="account" required />
 				</section>
 				<section>
-					<label for="password">Password:</label>
+					<label for="password">密码:</label>
 					<input type="password" name="password" id="password" required />
                 </section>
                 <section style="text-align: center;">
