@@ -1,9 +1,6 @@
 <?php 
 header("content-Type: text/html; charset=utf-8");
-$servername = "localhost"; 
-$username = "root"; 
-$dbpassword = "homework1.0"; 
-$dbname = "annotation"; 
+require "local.php";
 $account = htmlspecialchars($_POST["account"], ENT_QUOTES);
 $password = htmlspecialchars($_POST["password"], ENT_QUOTES);
 

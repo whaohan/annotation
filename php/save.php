@@ -1,13 +1,10 @@
 <?php
+	require "local.php";
 	$annotationId = htmlspecialchars($_POST["annotationId"], ENT_QUOTES);
 	$valence = htmlspecialchars($_POST["valence"], ENT_QUOTES);
 	$arousal = htmlspecialchars($_POST["arousal"], ENT_QUOTES);
 	$complete = htmlspecialchars($_POST["complete"], ENT_QUOTES);
 	$account = htmlspecialchars($_POST["account"], ENT_QUOTES);
-	$servername = "localhost";
-	$username = "root";
-	$password = "homework1.0";
-	$dbname = "annotation";
 	try {
 		// 创建连接
 		$conn = new mysqli($servername, $username, $password, $dbname);

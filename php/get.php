@@ -1,9 +1,6 @@
 <?php 
 header("content-Type: text/html; charset=utf-8");
-$servername = "localhost"; 
-$username = "root"; 
-$password = "homework1.0"; 
-$dbname = "annotation"; 
+require "local.php";
 
 // build and check the connection
 $conn =new mysqli($servername, $username, $password, $dbname); 
