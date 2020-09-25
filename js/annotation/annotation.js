@@ -41,9 +41,9 @@ function updateProgressBar() {
     if(progress != null) {
 
         if(annotationState == 0)
-            document.getElementById("progressTitle").innerHTML = "Step 1: Calibration";
+            document.getElementById("progressTitle").innerHTML = "步骤1: 校准";
         else if (annotationState == 1)
-            document.getElementById("progressTitle").innerHTML = "Step 2: Annotation";
+            document.getElementById("progressTitle").innerHTML = "步骤2: 标注";
 
         var audioControls = document.getElementById('audio-controls')
 
@@ -83,13 +83,12 @@ function updatePieceLabel(pieceName) {
 
 function setStep1Modal() {
     // document.getElementById("annotationStep").innerHTML = "Step 1 - Calibration";
-    document.getElementById("modalTitle").innerHTML = "Step 1: Calibration";
+    document.getElementById("modalTitle").innerHTML = "步骤1: 校准";
     document.getElementById("modalBodyFirstParagraph").innerHTML =
-        `While listenning to the first 15 seconds of the piece, set the
-        starting point of the annotation.`;
+        `聆听曲目的前15秒，并设置标注的起点。`;
 
     document.getElementById("modalBodySecondParagraph").innerHTML = ``;
-    document.getElementById("modalConfirmationButton").innerHTML = "Start Calibration";
+    document.getElementById("modalConfirmationButton").innerHTML = "开始校准";
 
     $('#modalCloseButton').addClass("d-none");
 
@@ -102,16 +101,14 @@ function setStep1Modal() {
 
 function setStep2Modal() {
     // document.getElementById("annotationStep").innerHTML = "Step 2 - Annotation";
-    document.getElementById("modalTitle").innerHTML = "Step 2: Annotation";
+    document.getElementById("modalTitle").innerHTML = "步骤2: 标注";
     document.getElementById("modalBodyFirstParagraph").innerHTML =
-        `Starting from where the annotation point is right now,
-         listen to the piece again and annotate it entirelly.`;
+        `再次聆听这段音乐，并进行完整标注。`;
 
     document.getElementById("modalBodySecondParagraph").innerHTML =
-        `<b>Keep in mind that emotions in music don't normally
-         change very drastically.</b>`;
+        `<b>请记住，音乐中的情感通常不会变化很大。</b>`;
 
-    document.getElementById("modalConfirmationButton").innerHTML = "Start Annotation";
+    document.getElementById("modalConfirmationButton").innerHTML = "开始标注";
 
     $('#modalCloseButton').addClass("d-none");
     $('#modalCloseButton').off('click');
@@ -131,16 +128,16 @@ function setStep2Modal() {
 
 function setStep3Modal() {
     // document.getElementById("annotationStep").innerHTML = "Step 3 - Confirmation";
-    document.getElementById("modalTitle").innerHTML = "Step 3: Confirmation";
+    document.getElementById("modalTitle").innerHTML = "步骤3: 确认";
 
     document.getElementById("modalBodySecondParagraph").innerHTML = "";
 
-    document.getElementById("modalCloseButton").innerHTML = "Reannotate this Piece";
+    document.getElementById("modalCloseButton").innerHTML = "重新标注";
 
     if(currentPiece < piecesToAnnotate.length - 1) {
         document.getElementById("modalBodyFirstParagraph").innerHTML = `
-            You finished annotating this piece. Do you want annotate the next piece?`;
-        document.getElementById("modalConfirmationButton").innerHTML = "Next Piece";
+        您已经完成了对这个音乐片段的标注。您要继续进行下一个音乐片段的标注吗？`;
+        document.getElementById("modalConfirmationButton").innerHTML = "下一个片段";
 
         $('#modalConfirmationButton').off('click');
         $('#modalConfirmationButton').on('click', function (e) {
@@ -150,8 +147,8 @@ function setStep3Modal() {
     }
     else {
         document.getElementById("modalBodyFirstParagraph").innerHTML = `
-            You finished annotating this piece and this was the last one. Do you want to finish the task?`;
-        document.getElementById("modalConfirmationButton").innerHTML = "Finish Task";
+        恭喜您！您完成了对这组音乐片段的标注。`;
+        document.getElementById("modalConfirmationButton").innerHTML = "完成本次标注";
 
         $('#modalConfirmationButton').off('click');
         $('#modalConfirmationButton').on('click', function (e) {
