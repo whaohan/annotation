@@ -15,7 +15,6 @@
 		// 判断annotationId是否已经存在
 		$sql_exist = "select ifnull((select annotationId from test where annotationId = '" . $annotationId . "' limit 1 ), 0)";
 		$result = $conn->query($sql_exist); 
-		$row = mysql_fetch_array($result, MYSQL_ASSOC);
 		if (mysql_num_rows($result)) { 
 			// 用户已提交过
             echo "Please do not resubmit the annotation!"; 
