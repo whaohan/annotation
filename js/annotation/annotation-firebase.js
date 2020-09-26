@@ -33,6 +33,6 @@ function savePieceAnnotation(pieceId, annotation) {
     console.log(complete)
 
     xhr.send(form);
-    if(xhr.responseText != '')
+    if(!xhr.responseText)
 	    alert(xhr.responseText);
 }
