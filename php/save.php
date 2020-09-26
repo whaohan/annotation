@@ -14,7 +14,7 @@
 		} 
 		// 判断annotationId是否已经存在
 		$sql_exist = "select ifnull((select annotationId from test where annotationId = '" . $annotationId . "' limit 1 ), 0)";
-		$result=mysql_query($sql_exist); 
+		$result = $conn->query($sql_exist); 
 		$row = mysql_fetch_array($result, MYSQL_ASSOC);
 		if (mysql_num_rows($result)) { 
 			// 用户已提交过
@@ -26,7 +26,7 @@
 		    $sql = "INSERT INTO test (annotationId, annotation)
 			VALUES ('" . $annotationId . "', '" . $str . "')";
 			
-			if ($conn->query($sql) === TRUE) {
+			if ($conn->query($sql) == TRUE) {
 				// add the complete number to the database
 				$complete = (int)$complete + 2;
 				$sql2 = "UPDATE user SET complete = ". (int)$complete ." WHERE account = '" . $account . "'";
