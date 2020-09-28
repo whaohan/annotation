@@ -25,7 +25,6 @@ function updatePiecesCount(data) {
         var arousal = arousalStr.split("@");
 
         for (var i = 0; i < pieces.length - 1; i++) {
-            annotation.isKnown = $('#knownPieceCheck' + i).is(':checked');
             annotation.valence = JSON.parse("[" + valence[i].substring(0, valence[i].length - 2) + "]");
             annotation.arousal = JSON.parse("[" + arousal[i].substring(0, arousal[i].length - 2) + "]");
 
