@@ -2,23 +2,10 @@
 function updatePiecesLabels(piecesStr) {
     var pieces = piecesStr.split("@")
     for (var i = 0; i < pieces.length - 1; i++) {
-        var checkbox = document.createElement("div");
-        checkbox.classList.add("custom-control");
-        checkbox.classList.add("custom-checkbox");
-
-        var input = document.createElement("input");
-        input.classList.add("custom-control-input");
-        input.setAttribute("type", "checkbox");
-        input.id = "knownPieceCheck" + i;
-        checkbox.appendChild(input);
-
         var label = document.createElement("label");
         label.classList.add("custom-control-label");
         label.innerHTML = "Piece " + (i+1) + ": " + pieces[i];
         label.setAttribute("for", input.id);
-        checkbox.appendChild(label);
-
-        document.getElementById("knownPiecesCheckboxes").appendChild(checkbox);
     }
 }
 // save the pieces we annotate
