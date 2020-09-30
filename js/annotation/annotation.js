@@ -136,8 +136,8 @@ function setStep3Modal() {
 
     if(currentPiece < piecesToAnnotate.length - 1) {
         document.getElementById("modalBodyFirstParagraph").innerHTML = `
-        您已经完成了对这个音乐片段的标注。您要继续进行下一个音乐片段的标注吗？`;
-        document.getElementById("modalConfirmationButton").innerHTML = "下一个片段";
+        您已经完成了对这首音乐的标注。您要继续进行下一首音乐的标注吗？`;
+        document.getElementById("modalConfirmationButton").innerHTML = "下一首音乐";
 
         $('#modalConfirmationButton').off('click');
         $('#modalConfirmationButton').on('click', function (e) {
@@ -147,7 +147,7 @@ function setStep3Modal() {
     }
     else {
         document.getElementById("modalBodyFirstParagraph").innerHTML = `
-        恭喜您！您完成了对这组音乐片段的标注。`;
+        恭喜您！您完成了对这组音乐的标注。`;
         document.getElementById("modalConfirmationButton").innerHTML = "完成本次标注";
 
         $('#modalConfirmationButton').off('click');
